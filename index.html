@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive periodic table of chemical elements for learning and exploration.">
+  <title>https://www.freelancer.com/u/CodeByFancy — Interactive Periodic Table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="https://www.freelancer.com/u/CodeByFancy home"><span class="brand-mark">✦</span><span>Abdul<span class="brand-light"> @CodeByFancy</span></span></a>
+      <div class="header-note"><span class="live-dot"></span> THE CHEMISTRY EXPLORER</div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">THE BUILDING BLOCKS OF EVERYTHING</p>
+          <h1>Explore the<br><span>Periodic Table.</span></h1>
+          <p class="hero-description">Discover the elements that make up our universe. Search, filter, and open any element to learn more.</p>
+        </div>
+        <div class="hero-stats" aria-label="Periodic table statistics">
+          <div><strong id="element-count">118</strong><span>ELEMENTS</span></div>
+          <div><strong>7</strong><span>PERIODS</span></div>
+          <div><strong>18</strong><span>GROUPS</span></div>
+        </div>
+      </section>
+      <section class="toolbar" aria-label="Table controls">
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search name, symbol, or atomic number…" autocomplete="off"></label>
+        <label class="filter-label" for="category-filter">CATEGORY</label>
+        <select id="category-filter">
+          <option value="all">All elements</option>
+          <option value="alkali-metal">Alkali metals</option>
+          <option value="alkaline-earth-metal">Alkaline earth metals</option>
+          <option value="transition-metal">Transition metals</option>
+          <option value="post-transition-metal">Post-transition metals</option>
+          <option value="metalloid">Metalloids</option>
+          <option value="reactive-nonmetal">Reactive nonmetals</option>
+          <option value="noble-gas">Noble gases</option>
+          <option value="lanthanide">Lanthanides</option>
+          <option value="actinide">Actinides</option>
+          <option value="unknown">Unknown properties</option>
+        </select>
+        <button id="reset" class="reset-btn" type="button">Reset</button>
+      </section>
+      <section class="legend" aria-label="Element categories">
+        <span><i class="swatch alkali-metal"></i>Alkali metal</span>
+        <span><i class="swatch alkaline-earth-metal"></i>Alkaline earth</span>
+        <span><i class="swatch transition-metal"></i>Transition metal</span>
+        <span><i class="swatch post-transition-metal"></i>Post-transition</span>
+        <span><i class="swatch metalloid"></i>Metalloid</span>
+        <span><i class="swatch reactive-nonmetal"></i>Reactive nonmetal</span>
+        <span><i class="swatch noble-gas"></i>Noble gas</span>
+        <span><i class="swatch lanthanide"></i>Lanthanide</span>
+        <span><i class="swatch actinide"></i>Actinide</span>
+      </section>
+      <section class="table-section">
+        <div class="section-heading"><div><p class="eyebrow">118 KNOWN ELEMENTS</p><h2>The elements</h2></div><p id="result-count" aria-live="polite">Showing 118 elements</p></div>
+        <div class="table-scroll">
+          <div id="periodic-table" class="periodic-table" aria-label="Interactive periodic table"></div>
+        </div>
+        <p class="mobile-hint">Tip: swipe horizontally to see the full table. Select a tile to view element details.</p>
+      </section>
+      <section class="lower-note">
+        <div class="note-icon">✧</div><div><h3>A universe in miniature.</h3><p>Every element has a unique identity, from lightweight hydrogen to the heaviest synthesized elements. Select a tile to explore its properties.</p></div>
+      </section>
+    </main>
+    <footer><span>https://www.freelancer.com/u/CodeByFancy</span><span>Made for curious minds · Educational reference</span></footer>
+  </div>
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button class="modal-close" id="modal-close" aria-label="Close details">×</button>
+      <div id="modal-category" class="modal-category">ELEMENT</div>
+      <div class="detail-top"><div id="modal-symbol" class="detail-symbol">H</div><div><p id="modal-number" class="atomic-number">ATOMIC NUMBER 1</p><h2 id="modal-name">Hydrogen</h2><p id="modal-mass" class="atomic-mass">1.008 u</p></div></div>
+      <p id="modal-summary" class="modal-summary"></p>
+      <div class="property-grid">
+        <div><span>PERIOD</span><strong id="modal-period">1</strong></div>
+        <div><span>GROUP</span><strong id="modal-group">1</strong></div>
+        <div><span>PHASE (ROOM TEMP.)</span><strong id="modal-phase">Gas</strong></div>
+        <div><span>DISCOVERED</span><strong id="modal-discovered">1766</strong></div>
+      </div>
+      <div class="modal-footer"><span>https://www.freelancer.com/u/CodeByFancy</span><button id="modal-next" type="button">Next element →</button></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
